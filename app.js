@@ -5,7 +5,7 @@
 //   type: "GET",
 // }).done(function (response) {
 
-  // let body = document.querySelector("body");
+// let body = document.querySelector("body");
 
 //   for (let i in response.matches) {
 //     let match = document.createElement("div");
@@ -26,45 +26,55 @@
 //     match.appendChild(teamA);
 
 //   }
-  
+
 // });
 
-
-
-
-let getFootballVid = () => {
+let getFootballVid = (country) => {
+  //let main = document.getElementsByTagName("main");
+  //if (country == null) {
+  //return (document.main.innerHTML = "");
+  //}
   axios
-  .get("https://www.scorebat.com/video-api/v1/")
-  .then(console.log("asdf"))
-  .then((response) => {
-  //   for (i = 0; i < 5; i++) {console.log(response.data[i].videos[0]) }
-  // // console.log(response.data[1].video)
-  fixtureVids(response)
-  })
-  .catch((err) => console.log(err));
-  };
+    .get("https://www.scorebat.com/video-api/v1/")
+    //.then(console.log("asdf"))
+    .then((response) => {
+      //   for (i = 0; i < 5; i++) {console.log(response.data[i].videos[0]) }
+      // // console.log(response.data[1].video)
+      fixtureVids(response, country);
+    })
+    .catch((err) => console.log(err));
+};
 
-
-fixtureVids = (response) => {
-  
-  let body = document.querySelector("body");
+fixtureVids = (response, country) => {
+  let main = document.querySelector("main");
 
   for (let i in response.data) {
-    if ( response.data[i].competition.id == 15) {
+    if (response.data[i].competition.id == country) {
       let match = document.createElement("div");
-      let video = document.createElement('div');
+      let video = document.createElement("div");
       let teams = document.createElement("p");
 
       teams.textContent = response.data[i].title;
       video.innerHTML = response.data[i].videos[0].embed;
 
-      body.appendChild(match);
+      main.appendChild(match);
       match.appendChild(video);
       match.appendChild(teams);
     }
   }
+};
 
+//if () {
+//document.getElementById("eng").addEventListener("click", getFootballVid(15));
+//document.getElementById("spa").addEventListener("click", getFootballVid(14));
+//document.getElementById("ger").addEventListener("click", getFootballVid(13));
+//document.getElementById("ita").addEventListener("click", getFootballVid(12));
+//document.getElementById("fra").addEventListener("click", getFootballVid(11));
+//}
 
-}
+//getFootballVid();
 
-getFootballVid()
+document
+  .getElementById("button")
+  .addEventListener("click", () => getFootballVid(14));
+
