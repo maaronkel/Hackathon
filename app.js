@@ -30,17 +30,9 @@
 // });
 
 let getFootballVid = (country) => {
-  //let main = document.getElementsByTagName("main");
-  //if (country == null) {
-  //return (document.main.innerHTML = "");
-  //}
   axios
     .get("https://www.scorebat.com/video-api/v1/")
-    //.then(console.log("asdf"))
     .then((response) => {
-      //   for (i = 0; i < 5; i++) {console.log(response.data[i].videos[0]) }
-      // // console.log(response.data[1].video)
-      //console.log(response);
       fixtureVids(response, country);
     })
     .catch((err) => console.log(err));
@@ -55,8 +47,8 @@ createEle = (response, i) => {
   let video = document.createElement("div");
   let teams = document.createElement("p");
   league.appendChild(match);
-  match.appendChild(video);
   match.appendChild(teams);
+  match.appendChild(video);
   teams.textContent = response.data[i].title;
   video.innerHTML = response.data[i].videos[0].embed;
 };
