@@ -4,7 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #e5f9e0;
 }
 
 /* --- navbar --- */
@@ -14,6 +18,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 52px;
 }
 
 nav > * {
@@ -23,7 +28,6 @@ nav > * {
 .nav_ul {
   display: flex;
   align-content: center;
-  color: #e5f9e0;
 }
 
 #page {
@@ -41,7 +45,13 @@ li {
 
 a {
   text-decoration: none;
-  color: #e5f9e0;
+  color: #fff;
+}
+
+a:hover {
+  /*color: #e5f9e0;*/
+  border-bottom: 3px solid #40c9a2;
+  padding-bottom: 3px;
 }
 
 ul {
@@ -49,8 +59,8 @@ ul {
 }
 
 .current {
-  border-bottom: 4px solid #e5f9e0;
-  color: #fff;
+  border-bottom: 3px solid #40c9a2;
+  padding-bottom: 3px;
 }
 
 /* ------ highlights page ------ */
@@ -59,13 +69,14 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  margin-bottom: 60px;
+  padding: 0 60px 60px 60px;
 }
 
 .highMatch {
   width: 600px;
   margin: 60px auto;
   background-color: #40c9a2;
+  box-shadow: 10px 10px #2f9c95;
 }
 
 .highVideo {
@@ -87,27 +98,73 @@ ul {
   padding: 20px;
 }
 
+.staTeam {
+  display: flex;
+  align-items: center;
+  /*justify-content: start;*/
+}
+
 .staTeam > * {
   display: inline-block;
 }
 
 .staPos {
-  margin: 16px;
+  background-color: #40c9a2;
+  padding: 12px;
+  width: 44px;
+  border-radius: 50%;
+  color: #000;
+  text-align: center;
+}
+
+.staName {
+  margin-left: 10px;
+  position: absolute;
+  left: 190px;
+  color: #000;
+}
+
+.staPoints {
+  position: absolute;
+  right: 0;
+  margin: 0 40px 0 0;
 }
 
 .staCrest {
-  width: 40px;
+  width: 44px;
   height: auto;
-  margin-right: 20px;
+  background-color: #fff;
+  padding: 8px;
+  margin-left: 28px;
+  border-radius: 50%;
+  position: absolute;
+  left: 100px;
 }
 
 .standings_url {
   background-color: #e5f9e0;
+  height: 52px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 2px solid #dcefd7;
 }
 
 .standings_url > li {
   display: inline-block;
+  margin: 20px;
+  color: #2f9c95;
+}
+
+.stand_pos {
+  position: absolute;
+  left: 10px;
+}
+.stand_points {
+  position: absolute;
+  right: 0;
+}
+.stand_name {
+  position: absolute;
+  left: 176px;
 }
