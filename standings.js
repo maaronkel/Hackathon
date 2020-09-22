@@ -1,3 +1,5 @@
+import {searchVid} from "./teamvid.js";
+
 let table = document.querySelector("#table");
 let main = document.querySelector("main");
 main.appendChild(table);
@@ -26,6 +28,14 @@ let getData = (country = "PL") => {
     .catch((err) => console.log(err));
 };
 
+
+// reDirect = (name) => {
+//     window.location.assign("teamvid.html")
+//     searchVid(name)
+
+
+// }
+
 createTable = (data, i) => {
   // console.log(response, i)
   let team = document.createElement("ul");
@@ -47,7 +57,13 @@ createTable = (data, i) => {
   teamCrest.src = data[i].team.crestUrl;
   teamName.textContent = data[i].team.name;
   teamPoints.textContent = data[i].points;
+
+
+
+//   team.addEventListener("click", () => redirect(teamName.textContent))
 };
+
+
 
 document.getElementById("PL").addEventListener("click", () => getData("PL"));
 document.getElementById("PD").addEventListener("click", () => getData("PD"));
