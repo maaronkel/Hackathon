@@ -13,7 +13,8 @@ function deleteChildren() {
 
 $.ajax({
   headers: { "X-Auth-Token": "bebca4b77c9d4d58849ac24ee825106a" },
-  url: `https://api.football-data.org/v2/competitions/${country}/standings`,
+  // country dynamic function returns string 
+  url: `https://api.football-data.org/v2/competitions/PL/standings`,
   dataType: "json",
   type: "GET",
 }).done(function (response) {
