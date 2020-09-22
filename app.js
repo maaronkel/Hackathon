@@ -1,4 +1,4 @@
-let getFootballVid = (country) => {
+let getFootballVid = (country = 15) => {
   axios
     .get("https://www.scorebat.com/video-api/v1/")
     .then((response) => {

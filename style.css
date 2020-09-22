@@ -12,7 +12,7 @@
 nav {
   background-color: #2f9c95;
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -49,7 +49,8 @@ ul {
 }
 
 .current {
-  color: #40c9a2;
+  border-bottom: 4px solid #e5f9e0;
+  color: #fff;
 }
 
 /* ------ highlights page ------ */
@@ -80,8 +81,33 @@ ul {
 /* ------ standings page ------ */
 
 #table {
+  margin: 0 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.staTeam > * {
+  display: inline-block;
 }
 
 .staPos {
-  color: green;
+  margin: 16px;
+}
+
+.staCrest {
+  width: 40px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.standings_url {
+  background-color: #e5f9e0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.standings_url > li {
+  display: inline-block;
 }
