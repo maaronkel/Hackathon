@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #e5f9e0;
+  /*background-color: #e5f9e0;*/
 }
 
 /* --- navbar --- */
@@ -76,8 +76,7 @@ ul {
   width: 600px;
   margin: 60px auto;
   background-color: #40c9a2;
-  box-shadow: 10px 10px #2f9c95;
-  /*box-shadow: 10px 10px 5px grey;*/
+  box-shadow: 5px 5px 5px #606060;
 }
 
 .highVideo {
@@ -86,8 +85,9 @@ ul {
 
 .highTeams {
   text-align: center;
-  margin: 20px;
+  padding: 20px;
   color: #2b2d42;
+  /*box-shadow: -6px -6px #2f9c95;*/
 }
 
 /* ------ standings page ------ */
@@ -127,35 +127,45 @@ ul {
 
 .staPoints {
   position: absolute;
-  right: 0;
+  right: 480px;
   margin: 0 40px 0 0;
   color: #2b2d42;
 }
 
 .staCrest {
-  width: 44px;
+  width: 60px;
   height: auto;
   background-color: #fff;
   padding: 8px;
   margin-left: 28px;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   position: absolute;
   left: 100px;
 }
 
+.staPlayed {
+  position: absolute;
+  right: 270px;
+}
+
+.staGD {
+  position: absolute;
+  right: 30px;
+  margin: 0 40px 0 0;
+}
+
 .standings_url {
-  background-color: #b74f6f;
+  background-color: #e5f9e0;
   height: 52px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 2px solid #dcefd7;
 }
 
 .standings_url > li {
   display: inline-block;
   margin: 20px;
-  color: #fff;
+  color: #2b2d42;
 }
 
 .stand_pos {
@@ -164,9 +174,27 @@ ul {
 }
 .stand_points {
   position: absolute;
-  right: 0;
+  right: 482px;
 }
 .stand_name {
   position: absolute;
   left: 176px;
+}
+
+.stand_played {
+  position: absolute;
+  right: 220px;
+}
+
+.stand_diff {
+  position: absolute;
+  right: 0;
+}
+
+/*------ home page ------*/
+.home_text {
+  width: 40%;
+  margin: 60px auto;
+  text-align: center;
+  line-height: 26px;
 }
