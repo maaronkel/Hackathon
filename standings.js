@@ -3,14 +3,22 @@ let table = document.querySelector("#table");
 let main = document.querySelector("main");
 main.appendChild(table);
 
+function deleteChildren() {
+    let first = table.firstElementChild;
+    while (first) {
+      first.remove();
+      first = table.firstElementChild;
+    }
+}
+
 $.ajax({
   headers: { "X-Auth-Token": "bebca4b77c9d4d58849ac24ee825106a" },
-  url: "https://api.football-data.org/v2/competitions/PL/standings",
+  url: `https://api.football-data.org/v2/competitions/${country}/standings`,
   dataType: "json",
   type: "GET",
 }).done(function (response) {
 
-    
+    deleteChildren()    
 //     // tableData = response.standings
   for (let i in response.standings[0].table) {
 
@@ -38,3 +46,10 @@ createTable = (data, i) => {
     teamPoints.textContent = data[i].points
     
 }
+
+
+//SA
+//PL
+//BL1
+//PD
+//FL1
