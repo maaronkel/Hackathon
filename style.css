@@ -87,7 +87,7 @@ ul {
 .highTeams {
   text-align: center;
   margin: 20px;
-  color: #000;
+  color: #2b2d42;
 }
 
 /* ------ standings page ------ */
@@ -114,7 +114,7 @@ ul {
   padding: 12px;
   width: 44px;
   border-radius: 50%;
-  color: #000;
+  color: #2b2d42;
   text-align: center;
 }
 
@@ -122,13 +122,14 @@ ul {
   margin-left: 10px;
   position: absolute;
   left: 190px;
-  color: #000;
+  color: #2b2d42;
 }
 
 .staPoints {
   position: absolute;
   right: 0;
   margin: 0 40px 0 0;
+  color: #2b2d42;
 }
 
 .staCrest {
@@ -143,7 +144,7 @@ ul {
 }
 
 .standings_url {
-  background-color: #e5f9e0;
+  background-color: #b74f6f;
   height: 52px;
   display: flex;
   flex-direction: row;
@@ -154,7 +155,7 @@ ul {
 .standings_url > li {
   display: inline-block;
   margin: 20px;
-  color: #2f9c95;
+  color: #fff;
 }
 
 .stand_pos {
