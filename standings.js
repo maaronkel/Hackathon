@@ -12,7 +12,7 @@ function deleteChildren() {
   }
 }
 
-let getData = (country) => {
+let getData = (country = "PL") => {
   axios
     .get(`https://api.football-data.org/v2/competitions/${country}/standings`, {
       headers: {
@@ -66,3 +66,5 @@ document.getElementById("PD").addEventListener("click", () => getData("PD"));
 document.getElementById("SA").addEventListener("click", () => getData("SA"));
 document.getElementById("FL1").addEventListener("click", () => getData("FL1"));
 document.getElementById("BL1").addEventListener("click", () => getData("BL1"));
+
+getData();
