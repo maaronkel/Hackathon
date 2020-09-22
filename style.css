@@ -4,9 +4,84 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav_ul > * {
+/* --- navbar --- */
+
+nav {
+  background-color: #2f9c95;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+nav > * {
   cursor: pointer;
-  display: inline-block;
+}
+
+.nav_ul {
+  display: flex;
+  align-content: center;
+  color: #e5f9e0;
+}
+
+#page {
+  font-size: 18px;
+}
+
+#title {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+li {
+  margin: 16px 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #e5f9e0;
+}
+
+ul {
+  list-style: none;
+}
+
+.current {
+  color: #40c9a2;
+}
+
+/* ------ highlights page ------ */
+
+#league {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin-bottom: 60px;
+}
+
+.highMatch {
+  width: 600px;
+  margin: 60px auto;
+  background-color: #40c9a2;
+}
+
+.highVideo {
+  width: 100%;
+}
+
+.highTeams {
+  text-align: center;
+  margin: 20px;
+  color: #000;
+}
+
+/* ------ standings page ------ */
+
+#table {
+}
+
+.staPos {
+  color: green;
 }
