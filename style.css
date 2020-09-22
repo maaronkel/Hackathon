@@ -4,7 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
+}
+
+body {
+  /*background-color: #e5f9e0;*/
 }
 
 /* --- navbar --- */
@@ -14,6 +18,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 52px;
 }
 
 nav > * {
@@ -23,7 +28,6 @@ nav > * {
 .nav_ul {
   display: flex;
   align-content: center;
-  color: #e5f9e0;
 }
 
 #page {
@@ -41,7 +45,13 @@ li {
 
 a {
   text-decoration: none;
-  color: #e5f9e0;
+  color: #fff;
+}
+
+a:hover {
+  /*color: #e5f9e0;*/
+  border-bottom: 3px solid #40c9a2;
+  padding-bottom: 3px;
 }
 
 ul {
@@ -49,8 +59,8 @@ ul {
 }
 
 .current {
-  border-bottom: 4px solid #e5f9e0;
-  color: #fff;
+  border-bottom: 3px solid #40c9a2;
+  padding-bottom: 3px;
 }
 
 /* ------ highlights page ------ */
@@ -59,13 +69,14 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  margin-bottom: 60px;
+  padding: 0 60px 60px 60px;
 }
 
 .highMatch {
   width: 600px;
   margin: 60px auto;
   background-color: #40c9a2;
+  box-shadow: 5px 5px 5px #606060;
 }
 
 .highVideo {
@@ -74,8 +85,9 @@ ul {
 
 .highTeams {
   text-align: center;
-  margin: 20px;
-  color: #000;
+  padding: 20px;
+  color: #2b2d42;
+  /*box-shadow: -6px -6px #2f9c95;*/
 }
 
 /* ------ standings page ------ */
@@ -87,22 +99,64 @@ ul {
   padding: 20px;
 }
 
+.staTeam {
+  display: flex;
+  align-items: center;
+  /*justify-content: start;*/
+}
+
 .staTeam > * {
   display: inline-block;
 }
 
 .staPos {
-  margin: 16px;
+  background-color: #40c9a2;
+  padding: 12px;
+  width: 44px;
+  border-radius: 50%;
+  color: #2b2d42;
+  text-align: center;
+}
+
+.staName {
+  margin-left: 10px;
+  position: absolute;
+  left: 190px;
+  color: #2b2d42;
+}
+
+.staPoints {
+  position: absolute;
+  right: 480px;
+  margin: 0 40px 0 0;
+  color: #2b2d42;
 }
 
 .staCrest {
-  width: 40px;
+  width: 60px;
   height: auto;
-  margin-right: 20px;
+  background-color: #fff;
+  padding: 8px;
+  margin-left: 28px;
+  /*border-radius: 50%;*/
+  position: absolute;
+  left: 100px;
+}
+
+.staPlayed {
+  position: absolute;
+  right: 270px;
+}
+
+.staGD {
+  position: absolute;
+  right: 30px;
+  margin: 0 40px 0 0;
 }
 
 .standings_url {
   background-color: #e5f9e0;
+  height: 52px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -110,4 +164,37 @@ ul {
 
 .standings_url > li {
   display: inline-block;
+  margin: 20px;
+  color: #2b2d42;
+}
+
+.stand_pos {
+  position: absolute;
+  left: 10px;
+}
+.stand_points {
+  position: absolute;
+  right: 482px;
+}
+.stand_name {
+  position: absolute;
+  left: 176px;
+}
+
+.stand_played {
+  position: absolute;
+  right: 220px;
+}
+
+.stand_diff {
+  position: absolute;
+  right: 0;
+}
+
+/*------ home page ------*/
+.home_text {
+  width: 40%;
+  margin: 60px auto;
+  text-align: center;
+  line-height: 26px;
 }

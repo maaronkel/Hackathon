@@ -38,15 +38,23 @@ createTable = (data, i) => {
   teamPoints.className = "staPoints";
   let teamCrest = document.createElement("img");
   teamCrest.className = "staCrest";
+  let teamPlayed = document.createElement("li");
+  teamPlayed.className = "staPlayed";
+  let teamGD = document.createElement("li");
+  teamGD.className = "staGD";
   table.appendChild(team);
   team.appendChild(teamPos);
   team.appendChild(teamCrest);
   team.appendChild(teamName);
   team.appendChild(teamPoints);
+  team.appendChild(teamPlayed);
+  team.appendChild(teamGD);
   teamPos.textContent = data[i].position;
   teamCrest.src = data[i].team.crestUrl;
   teamName.textContent = data[i].team.name;
   teamPoints.textContent = data[i].points;
+  teamPlayed.textContent = data[i].playedGames;
+  teamGD.textContent = data[i].goalDifference;
 };
 
 document.getElementById("PL").addEventListener("click", () => getData("PL"));
