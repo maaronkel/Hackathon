@@ -40,41 +40,62 @@ let getFootballVid = (country) => {
     .then((response) => {
       //   for (i = 0; i < 5; i++) {console.log(response.data[i].videos[0]) }
       // // console.log(response.data[1].video)
+      //console.log(response);
       fixtureVids(response, country);
     })
     .catch((err) => console.log(err));
 };
 
-fixtureVids = (response, country) => {
-  let main = document.querySelector("main");
+let league = document.querySelector("#league");
+let main = document.querySelector("main");
+main.appendChild(league);
 
+createEle = (response, i) => {
+  let match = document.createElement("div");
+  let video = document.createElement("div");
+  let teams = document.createElement("p");
+  league.appendChild(match);
+  match.appendChild(video);
+  match.appendChild(teams);
+  teams.textContent = response.data[i].title;
+  video.innerHTML = response.data[i].videos[0].embed;
+};
+
+function deleteChildren() {
+  let first = league.firstElementChild;
+  while (first) {
+    first.remove();
+    first = league.firstElementChild;
+  }
+}
+
+fixtureVids = (response, country) => {
+  deleteChildren();
   for (let i in response.data) {
     if (response.data[i].competition.id == country) {
-      let match = document.createElement("div");
-      let video = document.createElement("div");
-      let teams = document.createElement("p");
-
-      teams.textContent = response.data[i].title;
-      video.innerHTML = response.data[i].videos[0].embed;
-
-      main.appendChild(match);
-      match.appendChild(video);
-      match.appendChild(teams);
+      createEle(response, i);
     }
   }
 };
 
-//if () {
-//document.getElementById("eng").addEventListener("click", getFootballVid(15));
-//document.getElementById("spa").addEventListener("click", getFootballVid(14));
-//document.getElementById("ger").addEventListener("click", getFootballVid(13));
-//document.getElementById("ita").addEventListener("click", getFootballVid(12));
-//document.getElementById("fra").addEventListener("click", getFootballVid(11));
-//}
-
-//getFootballVid();
-
 document
-  .getElementById("button")
+  .getElementById("eng")
+  .addEventListener("click", () => getFootballVid(15));
+document
+  .getElementById("spa")
   .addEventListener("click", () => getFootballVid(14));
+//document
+//.getElementById("ger")
+//.addEventListener("click", () => getFootballVid(9));
+document
+  .getElementById("ita")
+  .addEventListener("click", () => getFootballVid(13));
+document
+  .getElementById("fra")
+  .addEventListener("click", () => getFootballVid(10));
 
+getFootballVid();
+
+//document
+//.getElementById("button")
+//.addEventListener("click", () => getFootballVid(11));

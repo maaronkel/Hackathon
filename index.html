@@ -4,16 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soccer Clips</title>
+    <link href="style.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <nav>
       <h1>Title</h1>
-      <ul>
+      <ul class="nav_ul">
         <li><a id="eng">Premier League</a></li>
-        <button id="button">SPAIN</button>
-        <li><a id="ger">Bundesliga</a></li>
         <li><a id="spa">La Liga</a></li>
         <li><a id="ita">Serie A</a></li>
         <li><a id="fra">Ligue 1</a></li>
@@ -22,7 +21,7 @@
       </ul>
     </nav>
     <main>
-      <!-- <button id="button">TEST ME</button> -->
+      <div id="league"></div>
     </main>
     <script type="text/javascript" src="app.js"></script>
   </body>
