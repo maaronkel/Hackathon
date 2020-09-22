@@ -29,10 +29,15 @@ let getData = (country) => {
 createTable = (data, i) => {
   // console.log(response, i)
   let team = document.createElement("ul");
+  team.className = "staTeam";
   let teamName = document.createElement("li");
+  teamName.className = "staName";
   let teamPos = document.createElement("li");
+  teamPos.className = "staPos";
   let teamPoints = document.createElement("li");
+  teamPoints.className = "staPoints";
   let teamCrest = document.createElement("img");
+  teamCrest.className = "staCrest";
   table.appendChild(team);
   team.appendChild(teamPos);
   team.appendChild(teamCrest);
@@ -44,9 +49,8 @@ createTable = (data, i) => {
   teamPoints.textContent = data[i].points;
 };
 
-document.getElementById("eng").addEventListener("click", () => getData("PL"));
-document.getElementById("spa").addEventListener("click", () => getData("PD"));
-document.getElementById("ita").addEventListener("click", () => getData("SA"));
-document.getElementById("fra").addEventListener("click", () => getData("FL1"));
-document.getElementById("ger").addEventListener("click", () => getData("BL1"));
-
+document.getElementById("PL").addEventListener("click", () => getData("PL"));
+document.getElementById("PD").addEventListener("click", () => getData("PD"));
+document.getElementById("SA").addEventListener("click", () => getData("SA"));
+document.getElementById("FL1").addEventListener("click", () => getData("FL1"));
+document.getElementById("BL1").addEventListener("click", () => getData("BL1"));
