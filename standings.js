@@ -1,3 +1,5 @@
+// import {searchVid} from "./teamvid.js";
+
 let table = document.querySelector("#table");
 let main = document.querySelector("main");
 main.appendChild(table);
@@ -26,7 +28,17 @@ let getData = (country = "PL") => {
     .catch((err) => console.log(err));
 };
 
-createTable = (data, i) => {
+
+let redirect = (name) => {
+
+  let base = "/teamvid.html"
+  let queryStr = "?name="+name
+
+    window.location.assign(base + queryStr)
+
+}
+
+let createTable = (data, i) => {
   // console.log(response, i)
   let team = document.createElement("ul");
   team.className = "staTeam";
@@ -55,7 +67,13 @@ createTable = (data, i) => {
   teamPoints.textContent = data[i].points;
   teamPlayed.textContent = data[i].playedGames;
   teamGD.textContent = data[i].goalDifference;
+
+
+
+  team.addEventListener("click", () => redirect(teamName.textContent))
 };
+
+
 
 document.getElementById("PL").addEventListener("click", () => getData("PL"));
 document.getElementById("PD").addEventListener("click", () => getData("PD"));
