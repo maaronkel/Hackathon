@@ -1,4 +1,4 @@
-import {searchVid} from "./teamvid.js";
+// import {searchVid} from "./teamvid.js";
 
 let table = document.querySelector("#table");
 let main = document.querySelector("main");
@@ -29,14 +29,16 @@ let getData = (country = "PL") => {
 };
 
 
-// reDirect = (name) => {
-//     window.location.assign("teamvid.html")
-//     searchVid(name)
+let redirect = (name) => {
 
+  let base = "/teamvid.html"
+  let queryStr = "?name="+name
 
-// }
+    window.location.assign(base + queryStr)
 
-createTable = (data, i) => {
+}
+
+let createTable = (data, i) => {
   // console.log(response, i)
   let team = document.createElement("ul");
   team.className = "staTeam";
@@ -60,7 +62,7 @@ createTable = (data, i) => {
 
 
 
-//   team.addEventListener("click", () => redirect(teamName.textContent))
+  team.addEventListener("click", () => redirect(teamName.textContent))
 };
 
 
