@@ -6,7 +6,7 @@
 
 [Github](https://github.com/AlexQ6/Goalflix) - Github repository
 
-### Purpose
+## Purpose
 
 To have a convenient and consolidated place to watch European football highlights and check standings
 
