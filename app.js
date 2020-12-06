@@ -14,7 +14,7 @@ main.appendChild(league);
 createEle = (response, i) => {
   let match = document.createElement("div");
   match.className = "highMatch";
-  let video = document.createElement("div");
+  let video = document.createElement("div");  
   video.className = "highVideo";
   let teams = document.createElement("p");
   teams.className = "highTeams";
