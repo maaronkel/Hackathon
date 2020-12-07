@@ -28,15 +28,12 @@ let getData = (country = "PL") => {
     .catch((err) => console.log(err));
 };
 
-
 let redirect = (name) => {
+  let base = "/teamvid.html";
+  let queryStr = "?name=" + name;
 
-  let base = "/teamvid.html"
-  let queryStr = "?name="+name
-
-    window.location.assign(base + queryStr)
-
-}
+  window.location.assign(base + queryStr);
+};
 
 let createTable = (data, i) => {
   // console.log(response, i)
@@ -68,12 +65,8 @@ let createTable = (data, i) => {
   teamPlayed.textContent = data[i].playedGames;
   teamGD.textContent = data[i].goalDifference;
 
-
-
-  team.addEventListener("click", () => redirect(teamName.textContent))
+  team.addEventListener("click", () => redirect(teamName.textContent));
 };
-
-
 
 document.getElementById("PL").addEventListener("click", () => getData("PL"));
 document.getElementById("PD").addEventListener("click", () => getData("PD"));
